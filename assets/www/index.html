@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+html {
+	height: 100%
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0
+}
+
+#map-canvas {
+	height: 100%
+}
+</style>
+<!-- <script
+	src="http://debug.phonegap.com/target/target-script-min.js#anonymous"></script> -->
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?AIzaSyCvXd2W8DsVb69dEUe6KLXKTIANy2DR4iA&sensor=false">
+	
+</script>
+<script type="text/javascript"
+	src="http://maps.google.com/maps/api/js?libraries=geometry&sensor=false"></script>
+<script type="text/javascript">
+	var map;
+	var startLatlng;
+	var endLatLng;
+	var line;
+	var dpCount = 1;
+	var mvcArray;
+	var startPoint = 0;
+	function initialize() {
+		var zoomCoor = window.CallDroidGap.getZoominCoor();
+		//window.alert(zoomCoor);
+		var latlng3 = zoomCoor.split(',');
+		var lat3 = latlng3[0];
+		var lng3 = latlng3[1];
+
+		var mapOptions = {
+			center : new google.maps.LatLng(lat3, lng3),
+			zoom : 17,
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		};
+		map = new google.maps.Map(document.getElementById("map-canvas"),
+				mapOptions);
+
+		google.maps.event
+				.addListenerOnce(
+						map,
+						'tilesloaded',
+						function() {
+							//debugger;
+							var works = true;
+							var count = 0;
+							var infoCount = 0;
+							var innerinfo = 0;
+							var checkCount = 0;
+							var noval = 'noval';
+							var spanLength = window.CallDroidGap
+									.getSpanLength();
+							var infowindow = new google.maps.InfoWindow({});
+							var startIteration = true;
+							while (works == true) {
+								var ltLine = false;
+								//var coorList = window.CallDroidGap.getSurverCoor(count);
+								var startLatlng1 = window.CallDroidGap
+										.getSurverCoor(count, "start");
+								if (startLatlng1 !== noval) {
+									var endlatLng1 = window.CallDroidGap
+											.getSurverCoor(count, "end");
+									if (endlatLng1 !== noval) {
+										//var fromtoList = estList[i];
+
+										//if(coorList !=null){
+										//double s = startLatlng1;
+										//double e = endlatLng1;
+										var lineInfo = window.CallDroidGap
+												.getLineInfo(count);
+										if (lineInfo == 2) {
+											ltLine = true;
+										}
+										var latlng1 = startLatlng1.split(',');
+										var lat1 = latlng1[0];
+										var lng1 = latlng1[1];
+										var latlng2 = endlatLng1.split(',');
+										var lat2 = latlng2[0];
+										var lng2 = latlng2[1];
+										startLatlng = new google.maps.LatLng(
+												lat1, lng1);
+										endLatLng = new google.maps.LatLng(
+												lat2, lng2);
+										//	window.alert(startLatlng);
+										//	window.alert(endLatLng);
+
+										var image = 'pole.png';
+										line = new google.maps.Polyline({
+											path : [ startLatlng, endLatLng ],
+											strokeColor : "##FF0000",
+											strokeOpacity : 0.5,
+											strokeWeight : 4,
+											geodesic : true,
+											map : map
+										});
+										var tapp_image = 'Start_tap.png';
+
+										var distance = google.maps.geometry.spherical
+												.computeDistanceBetween(
+														startLatlng, endLatLng);
+										var startMarker;
+										if (startPoint == 0) {
+											startMarker = new google.maps.Marker(
+													{
+														position : startLatlng,
+														map : map,
+														icon : tapp_image,
+													});
+											startPoint = 1;
+
+										} else {
+											startMarker = new google.maps.Marker(
+													{
+														position : startLatlng,
+														map : map,
+														icon : image,
+													});
+										}
+										/* google.maps.event.addListener(
+												startMarker, 'click',
+												function() {
+													infowindow.open(map, this);
+												}); */
+
+										var endMarker = new google.maps.Marker(
+												{
+													position : endLatLng,
+													map : map,
+													icon : image,
+													title : 'Distance:'
+															+ distance
+												});
+
+										google.maps.event
+												.addListener(
+														endMarker,
+														'click',
+														function() {
+															infowindow
+																	.setContent(this.title);
+															infowindow.open(
+																	map, this);
+														});
+
+										// draw a line between the points
+										//window.CallDroidGap.getValueFromJS(distance);
+										var markerDistance = 10 * 1609.344;
+										var drawMarkers = true;
+										var newLatLng = startLatlng;
+
+										var startheading = google.maps.geometry.spherical
+												.computeHeading(startLatlng,
+														endLatLng);
+										// stop as soon as we've gone beyond the end point 
+										var actualPoleCount = distance
+												/ spanLength;
+										actualPoleCount = Math
+												.floor(actualPoleCount);
+										console.log(actualPoleCount);
+										console.log('actualPoleCount value');
+										var poleCount = 1;
+										if (distance > spanLength) {
+											dpCount = 1;
+
+											while (drawMarkers == true) {
+												// what's the 'heading' between them?
+
+												var heading = google.maps.geometry.spherical
+														.computeHeading(
+																newLatLng,
+																endLatLng);
+												//if ((startheading - heading) < 1) {
+												var prevDist = newLatLng;
+												console.log(heading);
+												console.log('heading value');
+												// get the latlng X miles from the starting point along this heading
+												var newLatLng = google.maps.geometry.spherical
+														.computeOffset(
+																newLatLng,
+																spanLength,
+																heading);
+
+											/* 	var newheading = google.maps.geometry.spherical
+														.computeHeading(
+																newLatLng,
+																endLatLng); */
+												//if ((newheading - heading) < 1) {
+												var presentDist = newLatLng;
+
+												var prevPresentDist = google.maps.geometry.spherical
+														.computeDistanceBetween(
+																startLatlng,
+																presentDist);
+												// calculate the distance between our new marker and the end marker
+												var newDistance = google.maps.geometry.spherical
+														.computeDistanceBetween(
+																newLatLng,
+																endLatLng);
+												// draw a marker
+
+												//  window.alert(distance);
+												//  window.alert(newDistance);
+												console.log(newDistance);
+												console.log(spanLength * 0.5);
+												console.log('distances----');
+												newDistance = Math
+														.round(newDistance);
+												console.log(newDistance);
+												if (newDistance == 0) {
+													drawMarkers = false;
+													count = count + 1;
+													break;
+												}//end of newDistance == 0 loop
+												if (newDistance < (spanLength * 0.5)) {
+													var array = new google.maps.MVCArray();
+													array = line.getPath();
+													//window.alert(array.length);
+													//if (array.length == 0) {
+													//newMarker.setMap(null);
+													//newMarker = null;
+
+													//}
+													drawMarkers = false;
+													count = count + 1;
+												}//end of (newDistance < (spanLength * 0.5)) if loop
+												else {
+
+													if (newDistance == (spanLength * 0.5)) {
+														drawMarkers = false;
+														count = count + 1;
+														if (dpCount % 10 == 0) {
+															dpCount = 1;
+															if (ltLine == true) {
+																image = 'pole.png';
+															} else {
+																image = 'DPSet.png';
+															}
+														} else {
+															image = 'pole.png';
+														}//end of dpCount % 10 == 0 if else condition
+														//actualPoleCount = distance/spanLength;
+														//var poleCount = 1;
+
+														var newMarker = new google.maps.Marker(
+																{
+																	position : newLatLng,
+																	map : map,
+																	icon : image,
+																	title : 'Distance;'
+																			+ prevPresentDist
+																});
+
+														google.maps.event
+																.addListener(
+																		newMarker,
+																		'click',
+																		function() {
+																			infowindow
+																					.setContent(this.title);
+																			infowindow
+																					.open(
+																							map,
+																							this);
+																		});
+													}//end of newDistance == (spanLength * 0.5) if condition
+
+													else {
+														if (dpCount % 10 == 0) {
+															dpCount = 1;
+															if (ltLine == true) {
+																image = 'pole.png';
+															} else {
+																image = 'DPSet.png';
+															}
+
+														}//end of dpCount % 10 == 0 if loop 
+														else {
+															image = 'pole.png';
+															dpCount = dpCount + 1;
+														}
+
+														var newMarker = new google.maps.Marker(
+																{
+																	position : newLatLng,
+																	map : map,
+																	icon : image,
+																	title : 'Distance;'
+																			+ prevPresentDist
+																});
+
+														google.maps.event
+																.addListener(
+																		newMarker,
+																		'click',
+																		function() {
+																			infowindow
+																					.setContent(this.title);
+																			infowindow
+																					.open(
+																							map,
+																							this);
+																		});
+													}//end of else loop for  newDistance == (spanLength * 0.5) if condition
+
+													console
+															.log(newDistance <= (spanLength * 0.5));
+													console
+															.log('values for new marker');
+
+													//end of else loop for (newDistance < (spanLength * 0.5)) if loop
+													//end of else loop for (newDistance < (spanLength * 0.5)) if loop
+
+												}
+												startIteration = false;
+
+											}//end of drawMarkers == true while loop  
+											/* else {
+												drawMarkers = false;
+												count = count + 1;
+
+											}
+											 */
+											//startIteration = 1;
+										}//end of distance > spanLength if loop
+										else {
+											count = count + 1;
+										}//end of else loop for distance > spanLength if loop
+
+									} // end of endlatLng1 !== noval if loop
+									else {
+										works = false;
+									}//end of else loop for endlatLng1 !== noval if loop
+								} // end of startlatLng1 !== noval if loop
+								else {
+									works = false;
+								}//end of else loop for startlatLng1 !== noval if loop
+							}//end of main works == true while loop
+							var tImage = 'transformer.png';
+							var transformerCount = window.CallDroidGap
+									.getTransformerCount();
+							for ( var i = 0; i < transformerCount; i++) {
+								var tLatlng = window.CallDroidGap
+										.getTransformer(i);
+								var latlngt = tLatlng.split(',');
+								var lat1 = latlngt[0];
+								var lng1 = latlngt[1];
+								var transformerLatlng = new google.maps.LatLng(
+										lat1, lng1)
+								var tMarker = new google.maps.Marker({
+									position : transformerLatlng,
+									map : map,
+									icon : tImage
+								});
+							}
+						});
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+<body>
+	<div id="map-canvas"></div>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#660066"
+    android:orientation="vertical" >
+
+    <Spinner
+        android:id="@+id/spnWorkTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spnWorkTask"
+        android:focusable="false"
+        android:hint="@string/etDate"
+        android:onClick="launchDate" >
+
+        <requestFocus />
+    </EditText>
+
+    <!--
+         <ExpandableListView
+        android:id="@+id/lvExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tableLayout01"
+        android:layout_below="@+id/etDate"
+        android:scrollingCache="false" />
+    -->
+
+
+    <!--
+            <ScrollView
+                android:id="@+id/svFinanceTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <HorizontalScrollView
+                    android:id="@+id/hsvFinanceTable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TableLayout
+                        android:id="@+id/tlFinanceTable"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>
+    -->
+
+    <TableLayout
+        android:id="@+id/tableLayout01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnImages"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="1dip"
+                android:layout_weight="0.33"
+                android:background="@layout/rounded"
+                android:gravity="center"
+                android:text="Images"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnImageCapture"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="1dip"
+                android:layout_weight="0.34"
+                android:background="@layout/rounded"
+                android:gravity="center"
+                android:text="Imagecapture"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="1dip"
+                android:layout_weight="0.33"
+                android:background="@layout/rounded"
+                android:gravity="center"
+                android:text="@string/btnCancel"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="1dip"
+                android:layout_weight="0.34"
+                android:background="@layout/rounded"
+                android:gravity="center"
+                android:text="@string/btnSend"
+                android:textColor="@color/white" />
+        </TableRow>
+    </TableLayout>
+
+    <ScrollView
+        android:id="@+id/Scrollviewmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tableLayout01"
+        android:layout_below="@+id/etDate" >
+
+        <LinearLayout
+            android:id="@+id/linearlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/HTlinearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/horizantalLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#A3A3A3"
+                    android:orientation="horizontal"
+                     >
+                    <LinearLayout
+                    android:id="@+id/horizantalLinearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#660066"
+                    android:layout_margin="1dp"
+                    
+                    android:orientation="horizontal"
+                    android:weightSum="2" >
+
+                    <ImageView
+                        android:id="@+id/imageviewarrow"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        
+                        android:layout_weight="0.2"
+                        android:background="#660066"
+                        android:paddingRight="10dp"
+                        
+                        android:src="@drawable/arrow_right" >
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/textviewht"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        
+                        android:layout_weight="1.8"
+                        android:background="#660066"
+                        android:text="HTLine"
+                        android:textColor="#3399cc"
+                        android:textSize="27dp" />
+                </LinearLayout>
+                </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/Scroll1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <HorizontalScrollView
+                        android:id="@+id/Hscrollview1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" >
+
+                        <TableLayout
+                            android:id="@+id/HtTablelayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" >
+                        </TableLayout>
+                    </HorizontalScrollView>
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Ltlinearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/horizantalLinearLayoutLT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#A3A3A3"
+                    android:orientation="horizontal"
+                    >
+<LinearLayout
+                    android:id="@+id/horizantalLinearLayoutLT1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#660066"
+                    android:layout_margin="1dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2" >
+                    <ImageView
+                        android:id="@+id/imageviewarrow"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        
+                        android:layout_weight="0.2"
+                        android:background="#660066"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/arrow_right" >
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/textviewlt"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8"
+                        android:background="#660066"
+                        android:text="LTLine"
+                        android:textColor="#3399cc"
+                        android:textSize="27dp" />
+                </LinearLayout>
+                </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/Scroll2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <HorizontalScrollView
+                        android:id="@+id/Hscrollview2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" >
+
+                        <TableLayout
+                            android:id="@+id/LtTablelayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" >
+                        </TableLayout>
+                    </HorizontalScrollView>
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/Tclinearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/horizantalLinearLayoutTC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#A3A3A3"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/horizantalLinearLayoutTC1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:background="#660066"
+                        android:orientation="horizontal"
+                        android:weightSum="2" >
+
+                        <ImageView
+                            android:id="@+id/imageviewarrow"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:background="#660066"
+                            android:paddingRight="10dp"
+                            android:src="@drawable/arrow_right" >
+                        </ImageView>
+
+                        <TextView
+                            android:id="@+id/textviewtc"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.8"
+                            android:background="#660066"
+                            android:text="TC"
+                            android:textColor="#3399cc"
+                            android:textSize="27dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ScrollView
+                    android:id="@+id/Scroll3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <HorizontalScrollView
+                        android:id="@+id/Hscrollview3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" >
+
+                        <TableLayout
+                            android:id="@+id/TCTablelayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" >
+                        </TableLayout>
+                    </HorizontalScrollView>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

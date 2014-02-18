@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_DownloadIQuantities"
+        android:orderInCategory="100"
+        android:title="Download latest"/>
+    <item
+        android:id="@+id/menu_Change_quatities_EstQ"
+        android:orderInCategory="100"
+        android:title="Change To Est Quantity"/>
+    <item
+        android:id="@+id/menu_Capture_image"
+        android:orderInCategory="100"
+        android:title="Capture Image"/>
+    <item
+        android:id="@+id/menu_View_images"
+        android:orderInCategory="100"
+        android:title="View Images"/>
+    <item
+        android:id="@+id/menu_Sendtoserver"
+        android:orderInCategory="100"
+        android:title="Send to server"/>
+    <item
+        android:id="@+id/menu_final_send"
+        android:orderInCategory="100"
+        android:title="Final Send"/>
+     <item
+        android:id="@+id/menu_old_project"
+        android:orderInCategory="100"
+        android:title="Import works from server"/>
+
+</menu>

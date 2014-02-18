@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dip"
+    android:background="#C6C6C6"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Span Length" />
+
+    <RadioGroup
+        android:id="@+id/spradioGroup"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content" >
+
+     <RadioButton
+            android:id="@+id/radio30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="30 mtr" />
+
+        <RadioButton
+            android:id="@+id/radio40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40 mtr" />
+       
+            <RadioButton
+            android:id="@+id/radio50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="50 mtr" />
+
+    </RadioGroup>
+
+<LinearLayout
+    android:id="@+id/linearlayoutsoil"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#C6C6C6"
+    android:orientation="vertical" >
+
+    <TextView 
+     android:id="@+id/tvSoil"
+     android:layout_width="wrap_content"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+     android:layout_height="wrap_content"
+     android:text="Type of soil"/>
+    <RadioGroup
+        android:id="@+id/soilradioGroup"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content" >
+         <RadioButton
+            android:id="@+id/radiosoftsoil"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Normal soil" />
+        <RadioButton
+            android:id="@+id/radiohardsoil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hard soil"/>
+        </RadioGroup>
+</LinearLayout>
+</LinearLayout>

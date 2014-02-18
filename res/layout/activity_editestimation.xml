@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#660066"
+    android:orientation="vertical" >
+
+    <!--
+         <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+    -->
+
+    <Spinner
+        android:id="@+id/spnWorkDescForEditEst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spnWorkDescForEditEst"
+        android:paddingLeft="20dip"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white" />
+
+    <!--
+            <ScrollView
+                android:id="@+id/svinnerEditEst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fadeScrollbars="false"
+                android:scrollbarSize="40dp" >
+
+                <HorizontalScrollView
+                    android:id="@+id/hsvEditEst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fadeScrollbars="false"
+                    android:scrollHorizontally="true"
+                    android:scrollbarStyle="outsideOverlay" >
+
+                    <TableLayout
+                        android:id="@+id/tlEditEst"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+                    </TableLayout>
+                </HorizontalScrollView>
+            </ScrollView>    -->
+
+    <ExpandableListView
+        android:id="@+id/lvExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tableLayout1"
+        android:layout_below="@+id/totalAmount"
+        android:scrollingCache="false"
+         />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:stretchColumns="*" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnSignature"
+                android:layout_height="50dp"
+                android:layout_margin="1dip"
+                android:background="@layout/rounded"
+                android:text="@string/btnSign"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnSendToServer"
+                android:layout_height="50dp"
+                android:layout_margin="1dip"
+                android:background="@layout/rounded"
+                android:text="@string/btnSendtoServer"
+                android:textColor="@color/white" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_height="50dp"
+                android:layout_margin="1dip"
+                android:background="@layout/rounded"
+                android:text="@string/btnCancel"
+                android:textColor="@color/white" />
+        </TableRow>
+    </TableLayout>
+
+    <!--
+    </LinearLayout>
+    </ScrollView>
+    -->
+
+</RelativeLayout>

@@ -1,0 +1,203 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3399cc"
+    android:orientation="vertical"
+    tools:context=".ProjectActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/projectNAME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF"
+            android:typeface="serif" />
+
+        <Spinner
+            android:id="@+id/proceject_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/Selectproject" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/child"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Spinner
+            android:id="@+id/item_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/Selectitem" />
+
+        <Spinner
+            android:id="@+id/spinSavedEstDescriptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/loction" >
+
+                <requestFocus />
+            </EditText>
+
+            <CheckBox
+                android:id="@+id/bends"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/bend" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/rff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="10dp"
+                android:text="@string/TotalDistance"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tvCurrentCoor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CurrentCoordinates:" />
+
+            <TextView
+                android:id="@+id/currentCord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/Imagecapture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dip"
+                    android:background="@layout/rounded"
+                    android:text="Image Capture"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/viewImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dip"
+                    android:background="@layout/rounded"
+                    android:text="Images"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/savecod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dip"
+                    android:background="@layout/rounded"
+                    android:text="@string/savecoordiants"
+                    android:textColor="@color/white" />
+            </TableRow>
+        </TableLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableLayout
+                        android:id="@+id/display"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" >
+                    </TableLayout>
+                </HorizontalScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/savetoLocal"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="1dip"
+                        android:background="@layout/rounded"
+                        android:text="@string/savetoLocal"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/LocalBack"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_margin="1dip"
+                        android:background="@layout/rounded"
+                        android:text="Back"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

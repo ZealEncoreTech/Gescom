@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3399cc" >
+
+    <Spinner
+        android:id="@+id/spnProjects"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:id="@+id/layoutCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spnProjects"
+        android:weightSum="2" >
+
+        <CheckBox
+            android:id="@+id/checkBoxspan"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_weight="1"
+            android:text="Survey sketch by defining span length" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/spanLengthSketchlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/layoutCheckBox"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please select span length"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <RadioGroup
+            android:id="@+id/rgSpanLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/rbtnThirty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="30" />
+
+            <RadioButton
+                android:id="@+id/rbtnFourty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40" />
+
+            <RadioButton
+                android:id="@+id/rbtnFifty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/spanLengthSketchlayout"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Continue" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Back" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLayout"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btnNormalMap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Skip to normal sketch view" />
+    </LinearLayout>
+
+</RelativeLayout>

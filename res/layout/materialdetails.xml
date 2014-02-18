@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Setting">
+       
+        <ListPreference android:title="Span Lenght"
+            android:key="SpanLenght" 
+            android:defaultValue="50"  
+            android:summary="Select Transformer Type" android:entries="@array/spanlenght"
+            android:entryValues="@array/spanlenghtValues" />
+        <ListPreference android:title="Laying Method"
+            android:key="layingMethod" 
+            android:defaultValue="Manual"  
+            android:summary="Select Cable Laying Type" android:entries="@array/layingMethods"
+            android:entryValues="@array/layingMethodsValues" />
+    </PreferenceCategory>
+</PreferenceScreen>

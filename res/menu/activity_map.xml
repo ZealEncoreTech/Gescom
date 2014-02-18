@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_settings"
+        android:orderInCategory="100"
+        android:title="Save this Estimation"/>
+    <item
+        android:id="@+id/menu_ImageView"
+        android:orderInCategory="100"
+        android:title="View Photos"/>
+    <item
+        android:id="@+id/menu_CapturePhotos"
+        android:orderInCategory="100"
+        android:title="Capture Image"/>
+
+</menu>

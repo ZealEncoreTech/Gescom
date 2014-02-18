@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#660066"
+    android:orientation="vertical" >
+
+    <Spinner
+        android:id="@+id/spnMeasurement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spnMeasurement"
+        android:paddingLeft="20dip"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/white" />
+
+    <ExpandableListView
+        android:id="@+id/lvExp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/totalAmount"
+        android:layout_above="@+id/tableLayout1"
+        android:scrollingCache="false" />
+
+
+<!--     <SlidingDrawer
+        android:id="@+id/slidingDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:content="@+id/tableLayout1"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:handle="@+id/btnMenu" >
+
+        <Button
+            android:id="@+id/btnMenu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="1dip"
+            android:layout_weight="0.52"
+            android:background="@layout/rounded"
+            android:text="Menu Up"
+            android:textColor="#FFFFFF" /> -->
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:stretchColumns="*" >
+
+           <!--  <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/btnImageCapture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dip"
+                    android:layout_weight="0.52"
+                    android:background="@layout/rounded"
+                    android:text="ImageCapture"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btnImages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dip"
+                    android:layout_weight="1.30"
+                    android:background="@layout/rounded"
+                    android:text="Images"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dip"
+                    android:layout_weight="0.13"
+                    android:background="@layout/rounded"
+                    android:text="@string/btnSend"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btnFinalSend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dip"
+                    android:layout_weight="0.35"
+                    android:background="@layout/rounded"
+                    android:text="FinalSend"
+                    android:textColor="#FFFFFF" />
+            </TableRow> -->
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <!-- <Button
+                    android:id="@+id/btndownload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dip"
+                    android:layout_weight="0.35"
+                    android:background="@layout/rounded"
+                    android:text="Download Latest items"
+                    android:textColor="#FFFFFF" />
+ -->
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_margin="1dip"
+                    android:layout_weight="0.35"
+                    android:background="@layout/rounded"
+                    android:text="@string/btnCancel"
+                    android:textColor="#FFFFFF" />
+            </TableRow>
+        </TableLayout>
+   <!--  </SlidingDrawer> -->
+
+</RelativeLayout>

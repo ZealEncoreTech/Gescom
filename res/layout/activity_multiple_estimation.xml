@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3399cc"
+    android:orientation="vertical" >
+
+    <Spinner
+        android:id="@+id/multiProjectSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:id="@+id/multiItemSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multiProjectSpinner" />
+
+    <EditText
+        android:id="@+id/multiEstDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/multiItemSpinner"
+        android:ellipsize="start"
+        android:ems="8"
+        android:hint="Enter Description"
+        android:inputType="textMultiLine"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:singleLine="true" >
+    </EditText>
+
+    <Button
+        android:id="@+id/saveEstDescription"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_margin="1dip"
+        android:layout_below="@+id/multiItemSpinner"
+        android:layout_toRightOf="@+id/multiEstDescription"
+        android:layout_weight="0.52"
+        android:background="@layout/rounded"
+        android:text=" Add "
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <HorizontalScrollView
+        android:id="@+id/ScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/saveEstDescription"
+        
+        android:layout_above="@+id/tableLayout1" >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:isScrollContainer="false"
+            android:layout_marginTop="20dp" >
+
+            <TableLayout
+                android:id="@+id/discriptionTable"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp" >
+            </TableLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tableLayout1"
+         >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/continueMulti"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="1dip"
+                android:layout_weight="0.52"
+                android:background="@layout/rounded"
+                android:text="Continue...."
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/backMulti"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_margin="1dip"
+                android:layout_weight="0.52"
+                android:background="@layout/rounded"
+                android:text="Back"
+                android:textColor="#FFFFFF" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+     >
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@android:color/darker_gray"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="1dp"
+        android:layout_weight="2"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#1AFF00" />
+
+    <TextView
+        android:id="@+id/tvWorkid"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#1AFF00" />
+
+    <TextView
+        android:id="@+id/tvmoreinfo"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="1dp"
+        android:layout_weight="1"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:text="..."
+        android:textColor="#1AFF00" />
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="spanlenght">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
+     <string-array name="spanlenghtValues">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+     </string-array>   
+     <string-array name="layingMethods">
+        <item>Manual</item>
+        <item>Horizontal drill</item>
+     </string-array>
+      <string-array name="layingMethodsValues">
+        <item>Manual</item>
+        <item>Horizontal drill</item>
+     </string-array>
+</resources>
