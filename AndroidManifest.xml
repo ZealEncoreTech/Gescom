@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zeal.gov.kar.gescomtesting"
+    android:versionCode="11"
+    android:versionName="1.11" >
+
+    <uses-sdk
+        android:maxSdkVersion="18"
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <permission
+        android:name="com.zeal.gov.kar.gescom.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!-- External storage for caching. -->
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/gescom_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyDGACdFVXOv-XOcrL-JlPRo1Nr2XjeQauU" />
+
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.CameraView"
+            android:label="Image Capture"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.Measurement"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.Savecoordinates"
+            android:label="@string/title_activity_savecoordinates"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="com.zeal.gov.kar.gescom.proxy.Soapproxy" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.UsermenuActivity"
+            android:label="@string/title_activity_usermenu" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.EditEstimationActivity"
+            android:label="@string/title_Activity_Estimation_Details" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.EditEstimation"
+            android:label="@string/title_Activity_Edit_Estimation" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.CreateEstimationActivity"
+            android:label="@string/title_activity_create_estimation" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.ItemwiseUpdateActivity"
+            android:label="@string/title_Activity_ItemwiseUpdate" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.TaskProgressActivity"
+            android:label="Task Progress" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.DigitalSignatureActivity"
+            android:label="@string/title_Activity_DigitalSignature" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.CameraActivity"
+            android:label="@string/title_activity_camera" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.MeasurementActivity"
+            android:label="@string/title_activity_MeasurementActivity" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.MultipleEstimationActivity"
+            android:label="@string/title_activity_multiple_estimation" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.ComponetDetails"
+            android:label="@string/title_activity_componet_details" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.CaptureCoordinates"
+            android:label="@string/title_activity_capture_coordinates" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.Editmeasurement"
+            android:label="@string/title_activity_EditMeasurement" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.MatreialDetails"
+            android:label="@string/title_activity_matreial_details" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.MapActivity"
+            android:label="@string/title_activity_map" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.SurveySketchActivity"
+            android:label="Survey Sketch" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.CategoryChange"
+            android:label="Category Change" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.IntermediatePoleActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.zeal.gov.kar.gescomtesting.SketchViewActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="Sketch View " >
+        </activity>
+    </application>
+
+</manifest>
